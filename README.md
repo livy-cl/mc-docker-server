@@ -1,1 +1,1 @@
-Run docker with ==docker-compose up -d==.
+Run docker with `docker-compose up -d`.
