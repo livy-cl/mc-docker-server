@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  mc:
+    image: itzg/minecraft-server:java17
+    ports:
+      - 10121:10121
+      - 25575:25575
+    environment:
+      EULA: "TRUE"
+      MEMORY: 5G
+      TYPE: FABRIC
+      VERSION: 1.18
+      MOTD: "§l§cNope§r §nserver"
+      OPS: livy_y
+      ICON: https://twitter.com/ABalvin321/status/1368011565224624131/photo/1
+      ENABLE_COMMAND_BLOCK: "true"
+      USE_AIKAR_FLAGS: "true"
+      SERVER_PORT: 10121
+      EXEC_DIRECTLY: "true"
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+    volumes:
+      - ./bin:/data
+      - ./mods:/data/mods
+      - ./world:/data/world
+      - ./config:/data/config
